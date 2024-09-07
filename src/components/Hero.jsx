@@ -1,250 +1,104 @@
-import { useState } from "react";
+import { ArrowRight, Award, BookOpen, Clock } from "lucide-react";
+import Top from "./Top";
 
-const Hero = () => {
-  const [expanded, setExpanded] = useState(false);
-
+export default function Hero() {
   return (
-    <div className="">
-      <header className="py-4 bg-black sm:py-6">
-        <div className="px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
-            <div className="shrink-0">
-              <a href="#" title="" className="flex">
-                <h1 className="text-4xl text-white font-semibold">
-                  Padh Le Bh.AI
-                </h1>
-              </a>
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+      <Top />
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjMjIyIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDVMNSAwWk02IDRMNCA2Wk0tMSAxTDEgLTFaIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMSI+PC9wYXRoPgo8L3N2Zz4=')] opacity-20"></div>
+      <div className="relative z-10">
+        <main className="container mx-auto px-4 py-16 space-y-24">
+          {/* Hero Section */}
+
+          {/* About Section */}
+          <section className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <h2 className="text-3xl font-bold">What is Padh Le Bh.AI?</h2>
+              <p className="text-gray-300">
+                Padh Le Bh.AI is an innovative AI-powered platform that
+                revolutionizes the way you study. By analyzing your syllabus and
+                understanding your time constraints, it creates a tailored study
+                roadmap to help you achieve your academic goals efficiently.
+              </p>
+              <ul className="space-y-2">
+                <li className="flex items-center">
+                  <BookOpen className="mr-2" /> Upload your syllabus
+                </li>
+                <li className="flex items-center">
+                  <Clock className="mr-2" /> Set your study time and deadlines
+                </li>
+                <li className="flex items-center">
+                  <ArrowRight className="mr-2" /> Get a personalized study plan
+                </li>
+              </ul>
             </div>
-
-            <div className="flex md:hidden">
-              <button
-                type="button"
-                className="text-white"
-                onClick={() => setExpanded(!expanded)}
-                aria-expanded={expanded}
-              >
-                {!expanded ? (
-                  <svg
-                    className="w-7 h-7"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="1.5"
-                      d="M4 6h16M4 12h16M4 18h16"
-                    />
-                  </svg>
-                ) : (
-                  <svg
-                    className="w-7 h-7"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
-                )}
-              </button>
-            </div>
-
-            <nav className="hidden space-x-10 md:flex md:items-center md:justify-center lg:space-x-12">
-              <a
-                href="#"
-                title=""
-                className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"
-              >
-                {" "}
-                Features{" "}
-              </a>
-              <a
-                href="#"
-                title=""
-                className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"
-              >
-                {" "}
-                Pricing{" "}
-              </a>
-              <a
-                href="#"
-                title=""
-                className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"
-              >
-                {" "}
-                Support{" "}
-              </a>
-            </nav>
-
-            <div className="relative hidden md:justify-center md:items-center md:inline-flex group">
-              <div className="absolute transition-all duration-200 rounded-full -inset-px bg-gradient-to-r from-cyan-500 to-purple-500 group-hover:shadow-lg group-hover:shadow-cyan-500/50"></div>
-              <a
-                href="#"
-                title=""
-                className="relative inline-flex items-center justify-center px-6 py-2 text-base font-normal text-white bg-black border border-transparent rounded-full"
-                role="button"
-              >
-                {" "}
-                Start free trial{" "}
-              </a>
-            </div>
-          </div>
-
-          {expanded && (
-            <nav>
-              <div className="flex flex-col pt-8 pb-4 space-y-6">
-                <a
-                  href="#"
-                  title=""
-                  className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"
-                >
-                  {" "}
-                  Products{" "}
-                </a>
-                <a
-                  href="#"
-                  title=""
-                  className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"
-                >
-                  {" "}
-                  Features{" "}
-                </a>
-                <a
-                  href="#"
-                  title=""
-                  className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"
-                >
-                  {" "}
-                  Pricing{" "}
-                </a>
-                <a
-                  href="#"
-                  title=""
-                  className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"
-                >
-                  {" "}
-                  Support{" "}
-                </a>
-                <div className="relative inline-flex items-center justify-center group">
-                  <div className="absolute transition-all duration-200 rounded-full -inset-px bg-gradient-to-r from-cyan-500 to-purple-500 group-hover:shadow-lg group-hover:shadow-cyan-500/50"></div>
-                  <a
-                    href="#"
-                    title=""
-                    className="relative inline-flex items-center justify-center w-full px-6 py-2 text-base font-normal text-white bg-black border border-transparent rounded-full"
-                    role="button"
-                  >
-                    {" "}
-                    Start free trial{" "}
-                  </a>
-                </div>
-              </div>
-            </nav>
-          )}
-        </div>
-      </header>
-
-      <section className="relative pt-12 overflow-hidden bg-black sm:pt-16">
-        <div className="relative px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-sm font-normal tracking-widest uppercase">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-500">
-                {" "}
-                Your Study Needs A Plan{" "}
-              </span>
-            </p>
-            <h1 className="mt-8 text-4xl font-normal text-white sm:text-5xl lg:text-6xl xl:text-7xl">
-              Padh Le Bh.AI: The AI That Knows You Need a Break Before You Do
-            </h1>
-
-            <div className="flex flex-col items-center justify-center px-8 mt-12 space-y-5 sm:space-y-0 sm:px-0 sm:space-x-5 sm:flex-row">
-              <div className="relative inline-flex items-center justify-center w-full sm:w-auto group">
-                <div className="absolute transition-all duration-200 rounded-full -inset-px bg-gradient-to-r from-cyan-500 to-purple-500 group-hover:shadow-lg group-hover:shadow-cyan-500/50"></div>
-                <a
-                  href="#"
-                  title=""
-                  className="relative inline-flex items-center justify-center w-full px-8 py-3 text-base font-normal text-white bg-black border border-transparent rounded-full sm:w-auto"
-                  role="button"
-                >
-                  {" "}
-                  Start 1 Day Free Trial{" "}
-                </a>
-              </div>
-
-              <a
-                href="#"
-                title=""
-                className="inline-flex items-center justify-center w-full px-8 py-3 text-base font-normal text-white transition-all duration-200 bg-black border border-gray-600 rounded-full sm:w-auto hover:border-white"
-                role="button"
-              >
-                {" "}
-                Subscribe Now{" "}
-              </a>
-            </div>
-          </div>
-
-          <div className="relative mt-12 -mb-4 sm:-mb-10 lg:-mb-12 sm:mt-16 lg:mt-24">
-            <div className="absolute top-0 transform -translate-x-1/2 left-1/2">
-              <svg
-                className="blur-3xl filter"
-                style={{ filter: "blur(64px)" }}
-                width="645"
-                height="413"
-                viewBox="0 0 645 413"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M181.316 218.778C86.2529 123.715 -63.7045 134.94 31.3589 39.8762C126.422 -55.1873 528.427 41.1918 623.49 136.255C718.554 231.319 470.678 289.068 375.614 384.131C280.551 479.195 276.38 313.842 181.316 218.778Z"
-                  fill="url(#d)"
+            <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+              <div className="aspect-w-16 aspect-h-9">
+                <img
+                  src="./plai.png"
+                  alt="Padh Le Bh.AI Interface"
+                  className="rounded-md object-cover w-full h-full"
+                  width={640}
                 />
-                <defs>
-                  <linearGradient
-                    id="d"
-                    x1="665.741"
-                    y1="178.506"
-                    x2="296.286"
-                    y2="474.62"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop
-                      offset="0%"
-                      style={{ stopColor: "var(--color-cyan-500)" }}
-                    />
-                    <stop
-                      offset="100%"
-                      style={{ stopColor: "var(--color-purple-500)" }}
-                    />
-                  </linearGradient>
-                </defs>
-              </svg>
+              </div>
             </div>
+          </section>
 
-            <div className="absolute inset-0">
-              <img
-                className="object-cover w-full h-full opacity-50"
-                src="https://landingfoliocom.imgix.net/store/collection/dusk/images/noise.png"
-                alt=""
-              />
+          {/* Hackathon Win Section */}
+          <section className="text-center bg-gray-800 py-12 px-4 rounded-lg">
+            <Award className="w-16 h-16 mx-auto mb-4 text-yellow-400" />
+            <h2 className="text-3xl font-bold mb-4">
+              Award-Winning Innovation
+            </h2>
+            <p className="text-xl text-gray-300">
+              Padh Le Bh.AI proudly secured victory at a recent hackathon,
+              recognized for its innovative approach to personalized learning.
+            </p>
+          </section>
+
+          {/* Created By Section */}
+          <section className="text-center">
+            <h2 className="text-3xl font-bold mb-8">Meet the Creators</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  name: "Shreyash Chandra",
+                  image: "https://avatars.githubusercontent.com/u/78721024?v=4",
+                  linkd: "https://github.com/shreyashchandra",
+                },
+                {
+                  name: "Aditya Yadav",
+                  image: "https://avatars.githubusercontent.com/u/97109361?v=4",
+                  linkd: "https://github.com/Adityauyadav",
+                },
+                {
+                  name: "Rashi Arora",
+                  image: "https://avatars.githubusercontent.com/u/74211043?v=4",
+                  linkd: "https://github.com/rashi12122001",
+                },
+              ].map((creator) => (
+                <a key={creator.name} href={creator.linkd}>
+                  <div className="space-y-4">
+                    <img
+                      src={creator.image}
+                      alt={creator.name}
+                      className="w-32 h-32 rounded-full mx-auto object-cover"
+                    />
+                    <p className="font-medium">{creator.name}</p>
+                  </div>
+                </a>
+              ))}
             </div>
+          </section>
+        </main>
 
-            <img
-              className="relative w-full max-w-5xl mx-auto"
-              src="https://raw.githubusercontent.com/Adityauyadav/PadhLeBhAI-v1/main/Screenshot-2.png"
-              alt=""
-            />
-          </div>
-        </div>
-      </section>
+        <footer className="container mx-auto px-4 py-8 mt-16 border-t border-gray-800 text-center text-gray-400">
+          <p>
+            &copy; {new Date().getFullYear()} Padh Le Bh.AI. All rights
+            reserved.
+          </p>
+        </footer>
+      </div>
     </div>
   );
-};
-
-export default Hero;
+}
