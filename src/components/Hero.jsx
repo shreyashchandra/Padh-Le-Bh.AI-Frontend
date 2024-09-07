@@ -62,15 +62,16 @@ export default function Hero() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
-                  name: "Shreyash Chandra",
-                  image: "https://avatars.githubusercontent.com/u/78721024?v=4",
-                  linkd: "https://github.com/shreyashchandra",
-                },
-                {
                   name: "Aditya Yadav",
                   image: "https://avatars.githubusercontent.com/u/97109361?v=4",
                   linkd: "https://github.com/Adityauyadav",
                 },
+                {
+                  name: "Shreyash Chandra",
+                  image: "https://avatars.githubusercontent.com/u/78721024?v=4",
+                  linkd: "https://github.com/shreyashchandra",
+                },
+
                 {
                   name: "Rashi Arora",
                   image: "https://avatars.githubusercontent.com/u/74211043?v=4",
