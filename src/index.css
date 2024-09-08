@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.button-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.moving-border {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  z-index: 1;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.button-container img {
+  border-radius: 50%;
+  z-index: 2;
+}

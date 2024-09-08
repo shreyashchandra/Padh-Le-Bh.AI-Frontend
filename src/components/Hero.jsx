@@ -1,7 +1,18 @@
 import { ArrowRight, Award, BookOpen, Clock } from "lucide-react";
 import Top from "./Top";
+import { useState } from "react";
 
 export default function Hero() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setMousePosition({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
       <Top />
@@ -59,7 +70,7 @@ export default function Hero() {
           {/* Created By Section */}
           <section className="text-center">
             <h2 className="text-3xl font-bold mb-8">Meet the Creators</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="flex flex-col items-center justify-center gap-28 lg:flex-row">
               {[
                 {
                   name: "Aditya Yadav",
@@ -78,16 +89,30 @@ export default function Hero() {
                   linkd: "https://github.com/rashi12122001",
                 },
               ].map((creator) => (
-                <a key={creator.name} href={creator.linkd}>
-                  <div className="space-y-4">
-                    <img
-                      src={creator.image}
-                      alt={creator.name}
-                      className="w-32 h-32 rounded-full mx-auto object-cover"
-                    />
-                    <p className="font-medium">{creator.name}</p>
-                  </div>
-                </a>
+                <>
+                  <a
+                    key={creator.name}
+                    href={creator.linkd}
+                    className="w-40 h-40 rounded-[5rem] overflow-hidden"
+                  >
+                    <div
+                      className="relative button-container  w-40 h-40 flex flex-col items-center justify-center"
+                      onMouseMove={handleMouseMove}
+                    >
+                      <div
+                        className="moving-border w-40 h-40 overflow-hidden"
+                        style={{
+                          background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, #3498db, #9b59b6, #e74c3c, #f1c40f, #1abc9c)`,
+                        }}
+                      ></div>
+                      <img
+                        src={creator.image}
+                        alt={creator.name}
+                        className="w-[9.5rem] h-[9.5rem] rounded-full mx-auto object-cover relative z-10"
+                      />
+                    </div>
+                  </a>
+                </>
               ))}
             </div>
           </section>
